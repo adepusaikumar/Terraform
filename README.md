@@ -1,22 +1,29 @@
 # Terraform
+![Terraform Setup](terraform.jpg)
 
-# This repository contains 
-Terraform configurations and Infrastructure as Code (IaC) scripts for managing cloud resources and deployment automation.
+### Terraform
 
-## Overview
-This repository provides reusable Terraform modules and configurations for provisioning and managing infrastructure.
+We need to understand what are the advantages and problems terraform is solving. It is popular infrastructure as a tool (IaC) tool as of now. Advantages of IaC are
 
-## Contents
-- Infrastructure modules
-- Environment-specific configurations
-- Resource definitions
-- Variable and output definitions
+* **Version Control:** <br />
+    Since it is code, we can maintain in GIT to version control it. We can maintain complete history of development. Collaboration is easy.
+ 
+* **Consistent Infrastructure:** <br />
+    Often we face the problem diff configurations in different environments like DEV, QA, PROD, etc. Using terraform we can create the infrastructure in multiple environments with more reliability.
 
-## Getting Started
-1. Install [Terraform](https://www.terraform.io/downloads.html)
-2. Configure your cloud provider credentials
-3. Update `terraform.tfvars` with your values
-4. Run `terraform init`, `terraform plan`, and `terraform apply`
+* **Automated Infra CRUD:** <br />
+    Using terraform we can create entire infra in minutes reducing the human errors while creating manually.
+    Using terraform we can update the infra easily.
+    Using terraform we can delete the infra easily.
 
-## Documentation
-Refer to individual module directories for detailed documentation.
+* **Inventory Management:** <br />
+    If we create infra manually it is very tough to maintain the inventory of services. But by seeing the terraform resources anyone can know the services being used for project.
+
+* **Cost Optimisation:** <br />
+    When we need infra we can create in minutes. When we don't need we can destroy in minutes. Saving cost and time.
+
+* **Automatic dependency management:** <br />
+    Terraform can understand the dependency between resources while creating, updating and deleting.
+
+* **Modular Infra:** <br />
+    We can develop our own modules or use open source modules to reuse the infra code. Any one can reuse our code and create infra instead of spending more time on their own.

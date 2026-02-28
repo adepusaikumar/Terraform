@@ -10,5 +10,5 @@ data "aws_instance" "example" {
 
 }
 output "primary_instance_ip" {
-  value = data.aws_instance.example.private_ip
+  value = data.aws_instance.example
 }

@@ -12,6 +12,7 @@ resource "aws_instance" "example" {
     Project = "roboshop"
   }
 }
+
 resource "aws_security_group" "allow_tls" {
   name        = "allow-all-terraform" # this is for AWS account
   description = "Allow TLS inbound traffic and all outbound traffic"
@@ -32,9 +33,7 @@ resource "aws_security_group" "allow_tls" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = var.sg_tags
+  tags = {
+    Name = "allow-all-terraform"
+  }
 }
-
-/* output "ec2"{
-  value=aws_instance.example
-} */

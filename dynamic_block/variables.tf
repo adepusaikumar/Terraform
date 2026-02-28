@@ -28,7 +28,7 @@ variable "domain_name" {
 variable "ingress_rules"{
     type=list
 
-    default[
+    default = [
     {
         description = "Allow SSH"
         from_port   = 22

@@ -7,6 +7,10 @@ data "aws_instance" "example" {
     name   = "tag:Name"
     values = ["TERRAFORM-MAIN-INSTANCE-PYTHON"]
   }
+  filter{
+    name = "instance-ids"
+    values=["i-0d5bdca8150790a28"]
+  }
 
 }
 

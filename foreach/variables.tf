@@ -6,14 +6,15 @@ variable "instances" {
         mysql = "t3.small"
         user = "t3.micro"
         shipping = "t3.small"
+        frontend = "t3.micro"
     }
 }
 
 # This should be converted into set
-/* variable "instances" {
+variable "instances" {
     type = list
     default = ["mongodb", "redis"]
-} */
+}
 
 variable "zone_id" {
   type = string

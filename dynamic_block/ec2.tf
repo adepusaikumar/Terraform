@@ -24,13 +24,14 @@ resource "aws_security_group" "allow_tls" {
   # here ingress is a special variable
   dynamic "ingress"{
     for_each = var.ingress_rules
-    protocol="-1"
     content{
       from_port = ingress.value.from_port
       to_port = ingress.value.to_port
       description= ingress.value.description
       cidr_blocks=ingress.value.cidr_blocks
       ipv6_cidr_blocks=ingress.value.ipv6_cidr_blocks
+      protocol=ingress.value.protocol
+      
     } 
   }
 

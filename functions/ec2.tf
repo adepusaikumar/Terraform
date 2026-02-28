@@ -32,3 +32,7 @@ resource "aws_security_group" "allow_tls" {
 
   tags = var.sg_tags
 }
+
+output "ec2"{
+  value=aws_instance.example
+}

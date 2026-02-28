@@ -8,7 +8,7 @@ data "aws_instance" "example" {
     values = ["TERRAFORM-MAIN-INSTANCE-PYTHON"]
   }
   filter{
-    name = "instance-ids"
+    name = "--instance-ids"
     values=["i-0d5bdca8150790a28"]
   }
 

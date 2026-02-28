@@ -1,4 +1,4 @@
-data "aws_instances" "example" {
+data "aws_instance" "example" {
   instance_tags = {
     Name = "TERRAFORM-MAIN-INSTANCE-PYTHON"
   }
@@ -10,5 +10,5 @@ data "aws_instances" "example" {
 
 }
 output "primary_instance_ip" {
-  value = data.aws_instances.example.private_ip
+  value = data.aws_instance.example.private_ip
 }

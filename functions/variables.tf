@@ -12,7 +12,7 @@
 
 # This should be converted into set
 variable "instances" {
-    type = list
+    type = list(string)
     default = ["mongodb", "redis", "frontend"]
 }
 

@@ -1,1 +1,11 @@
 sample file only
+
+This is a test file for the Terraform repository.
+
+Here are some sample items:
+- Item 1: Sample text content
+- Item 2: More sample data
+- Item 3: Additional test information
+
+You can add your own notes and content here as needed.
+

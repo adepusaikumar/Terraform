@@ -11,7 +11,7 @@ resource "aws_route53_record" "www" {
 
 resource "aws_route53_record" "frontend" {
   zone_id = var.zone_id
-  name ="roboshop.${var.domain_name}"
+  name ="${var.domain_name}"
     type = "A"
     allow_overwrite = true
     ttl = 1

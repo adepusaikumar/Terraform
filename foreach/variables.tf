@@ -13,7 +13,7 @@
 # This should be converted into set
 variable "instances" {
     type = list
-    default = ["mongodb", "redis"]
+    default = ["mongodb", "redis", "frontend"]
 }
 
 variable "zone_id" {

@@ -7,5 +7,7 @@ Here are some sample items:
 - Item 2: More sample data
 - Item 3: Additional test information
 
-You can add your own notes and content here as needed.
+Redhat-9-DevOps-Practice
+ami-0220d79f3f480ecf5
 
+https://github.com/adepusaikumar/Terraform.git

@@ -23,9 +23,72 @@ sudo yum install -y terraform
 echo "Step 4: Verifying Terraform installation..."
 terraform version
 
+# Check if terraform is in PATH
+echo ""
+echo "Step 5: Checking Terraform PATH..."
+TERRAFORM_PATH=$(which terraform)
+echo "Terraform is installed at: $TERRAFORM_PATH"
+
+# Add to PATH if needed (usually not required with yum installation)
+if ! command -v terraform &> /dev/null; then
+    echo "WARNING: Terraform not found in PATH!"
+    echo "Adding /usr/bin to PATH in ~/.bashrc..."
+    echo 'export PATH=$PATH:/usr/bin' >> ~/.bashrc
+    source ~/.bashrc
+else
+    echo "Terraform is accessible from PATH ✓"
+fi
+
 echo ""
 echo "======================================"
 echo "Terraform installed successfully!"
+echo "======================================"
+echo ""
+echo "NOTE: With yum installation, PATH is configured automatically."
+echo "You can run 'terraform init' without additional setup."
+echo ""
+
+# Install and configure AWS CLI
+echo "======================================"
+echo "Setting up AWS CLI"
+echo "======================================"
+
+# Check if AWS CLI is installed
+if ! command -v aws &> /dev/null; then
+    echo "Installing AWS CLI..."
+    sudo yum install -y aws-cli
+else
+    echo "AWS CLI is already installed ✓"
+fi
+
+echo ""
+echo "AWS CLI Configuration Options:"
+echo ""
+echo "OPTION 1 (RECOMMENDED for EC2): Use IAM Role"
+echo "  - Attach an IAM role to your EC2 instance with required permissions"
+echo "  - No credentials needed in the instance"
+echo "  - More secure approach"
+echo ""
+echo "OPTION 2: Configure AWS credentials manually"
+echo "  Run: aws configure"
+echo "  You'll need:"
+echo "    - AWS Access Key ID"
+echo "    - AWS Secret Access Key"
+echo "    - Default region (e.g., us-east-1)"
+echo "    - Output format (json)"
+echo ""
+echo "To verify AWS configuration:"
+echo "  aws sts get-caller-identity"
+echo ""
+echo "Required IAM Permissions for Terraform:"
+echo "  - EC2 (create, modify, delete instances)"
+echo "  - VPC (if creating networks)"
+echo "  - Route53 (if managing DNS)"
+echo "  - IAM (if creating roles/policies)"
+echo ""
+
+echo "======================================"
+echo "Quick Start Guide"
 echo "======================================"
 echo ""
 echo "To run your first Terraform file:"

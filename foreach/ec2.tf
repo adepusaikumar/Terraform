@@ -1,6 +1,6 @@
 # for each loop best for map and set
 
-resource "aws_instance" "app_services" {
+resource "aws_instance" "example" {
   for_each = toset(var.instances)
   # for_each = var.instances
   ami           = "ami-0220d79f3f480ecf5"

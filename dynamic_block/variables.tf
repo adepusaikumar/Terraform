@@ -36,7 +36,7 @@ variable "ingress_rules"{
         protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::/0"]
-    }
+    },
     {
         description = "Allow HTTP"
         from_port   = 443
@@ -44,7 +44,7 @@ variable "ingress_rules"{
         protocol    = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::/0"]
-    }
+    },
     
     ]
 }

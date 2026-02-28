@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_tls" {
     content{
       from_port = ingress.value.from_port
       to_port = ingress.value.to_port
-      description= ingress.key.description
+      description= ingress.value.description
       cidr_blocks=ingress.value.cidr_blocks
       ipv6_cidr_blocks=ingress.value.ipv6_cidr_blocks
     } 

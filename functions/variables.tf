@@ -11,7 +11,7 @@
 } */
 
 # This should be converted into set
-ariable "instances" {
+variable "instances" {
     type = list
     default = ["mongodb", "redis", "frontend"]
 }

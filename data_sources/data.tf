@@ -1,11 +1,14 @@
-data "aws_instances" "test" {
+data "aws_instances" "example" {
   instance_tags = {
-    Role = "TERRAFORM-MAIN-INSTANCE-PYTHON"
+    Name = "TERRAFORM-MAIN-INSTANCE-PYTHON"
   }
 
   filter {
-    name   = "AMI name"
-    values = ["Redhat-9-DevOps-Practice"]
+    name   = "tag:Name"
+    values = ["TERRAFORM-MAIN-INSTANCE-PYTHON"]
   }
 
+}
+output "primary_instance_ip" {
+  value = data.aws_instance.example.private_ip
 }

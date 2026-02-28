@@ -11,7 +11,7 @@ variable "instances" {
 }
 
 # This should be converted into set
-v/* ariable "instances" {
+/* ariable "instances" {
     type = list(string)
     default = ["mongodb", "redis", "frontend"]
 } */

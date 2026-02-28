@@ -9,6 +9,12 @@ data "aws_instance" "example" {
   }
 
 }
-output "ami_id" {
-  value = data.aws_instance.example.ami
+
+data "aws_instances" "test" {
+
+  instance_state_names = ["running", "stopped"]
+}
+
+output "test" {
+  value = data.aws_instances.test
 }

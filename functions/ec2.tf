@@ -4,12 +4,14 @@ resource "aws_instance" "example" {
   for_each = toset(var.instances)
   # for_each = var.instances
   ami           = "ami-0220d79f3f480ecf5"
-  instance_type = each.key
+  instance_type = each.value
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
-  tags = merge(var.common_tags, var.instance_tags)
+  tags = {
+    Name = each.key
+    Project = "roboshop"
+  }
 }
-
 resource "aws_security_group" "allow_tls" {
   name        = "allow-all-terraform" # this is for AWS account
   description = "Allow TLS inbound traffic and all outbound traffic"

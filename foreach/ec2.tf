@@ -33,7 +33,9 @@ resource "aws_security_group" "allow_tls" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = "allow-all-terraform"
-  }
+  tags = var.sg_tags
 }
+
+/* output "ec2"{
+  value=aws_instance.example
+} */

@@ -1,5 +1,5 @@
 # Map
-/* variable "instances" {
+variable "instances" {
     type = map
     default = {
         mongodb = "t3.micro"
@@ -8,13 +8,13 @@
         shipping = "t3.small"
         frontend = "t3.micro"
     }
-} */
+}
 
 # This should be converted into set
-variable "instances" {
+/* variable "instances" {
     type = list
     default = ["mongodb", "redis", "frontend"]
-}
+} */
 
 variable "zone_id" {
   type = string

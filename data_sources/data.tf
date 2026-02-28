@@ -9,6 +9,6 @@ data "aws_instance" "example" {
   }
 
 }
-output "primary_instance_ip" {
-  value = data.aws_instance.example
+output "ami_id" {
+  value = data.aws_instance.ami
 }

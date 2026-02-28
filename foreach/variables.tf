@@ -11,10 +11,10 @@ variable "instances" {
 }
 
 # This should be converted into set
-variable "instances" {
+/* variable "instances" {
     type = list
     default = ["mongodb", "redis"]
-}
+} */
 
 variable "zone_id" {
   type = string

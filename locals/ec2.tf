@@ -7,7 +7,7 @@ resource "aws_instance" "example" {
   tags = {
     Name = "terraform"
     Project = "roboshop"
-    Additional_tags = count.index
+    Additional_tags = local.instance_tags
   }
 }
 

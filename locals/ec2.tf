@@ -4,9 +4,10 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
   tags = {
+    count = length(local.instance_tags)
     Name = "terraform"
     Project = "roboshop"
-    Additional_tags = local.instance_tags
+    Additional_tags = count.index
   }
 }
 

@@ -15,7 +15,7 @@ resource "aws_instance" "example" {
 
   provisioner "local-exec"{
     command = "exit 1"
-    on_failre = continue
+    on_failure = continue
   }
 
   provisioner "local-exec"{
